@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-12 16:56:59
+ * @LastEditTime: 2021-10-13 08:39:40
  * @LastEditors: 郑钊宇
  * @Description: 首页
 -->
@@ -59,7 +59,24 @@
 <style>
   #top {
     height: 100%;
-    background-color: #333;
+    /* background-color: rgb(177, 156, 156); */
+    background-image: linear-gradient(125deg,#F44336,#E91E63,#9C27B0,#3F51B5,#2196F3);
+    background-size: 400%;
+    animation: bganimation 20s infinite;
+  }
+  @keyframes bganimation{
+    0%{
+      background-position: 0% 50%;
+    }
+
+    50%{
+      background-position: 100% 50%;
+    }
+
+    100%{
+      background-position: 0% 50%;
+    }
+
   }
 
   #top {
@@ -154,7 +171,7 @@
   * Footer
   */
   .mastfoot {
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, 0.822);
   }
 
 </style>

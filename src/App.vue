@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 08:42:29
- * @LastEditTime: 2021-10-12 16:11:28
+ * @LastEditTime: 2021-10-13 08:35:05
  * @LastEditors: 郑钊宇
  * @Description: 
 -->
@@ -22,6 +22,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50; 
+  margin: 0;
+  padding: 0;
 }
 
 html,body,#app{
