@@ -1,0 +1,33 @@
+.my-login-page {
+	color: #212529;
+	font-size: 15px;
+	text-shadow: none;
+	text-align: left;
+}
+
+.my-login-page .card-wrapper {
+	width: 35rem;
+}
+
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.651);
+}
+
+.my-login-page .card-body {
+	padding: 2rem;
+	line-height: 2.5rem;
+}
+
+.my-login-page .card .card-title {
+	margin-bottom: 30px;
+}
+
+.my-login-page .form-control {
+	border-width: 2.3px;
+}
+
+.my-login-page .btn{
+	padding: 12px 10px;
+	width: 100%;
+}

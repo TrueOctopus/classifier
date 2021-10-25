@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-13 08:39:40
+ * @LastEditTime: 2021-10-25 13:26:16
  * @LastEditors: 郑钊宇
  * @Description: 首页
 -->
@@ -12,17 +12,26 @@
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <h3 class="masthead-brand">CLASSIFIER</h3>
+        <router-link to="/">
+          <h3 class="masthead-brand">CLASSIFIER</h3>
+        </router-link>
+        
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="#">主页</a>
-          <a class="nav-link" href="#">登录</a>
-          <a class="nav-link" href="#">注册</a>
+          <router-link to="/">
+            <a class="nav-link active">主页</a>
+          </router-link>
+          <router-link to="/login">
+            <a class="nav-link">登录</a>
+          </router-link>
+          <router-link to="/register">
+            <a class="nav-link">注册</a>
+          </router-link>
         </nav>
       </div>
     </header>
 
-    <main role="main" class="inner cover">
-      <h1 class="cover-heading">铁路文献自动分类系统</h1>
+    <main role="main" class="inner cover" id="main">
+      <h1 class="cover-heading">铁路文献自动标引分类系统</h1>
       <p class="lead">
         <a href="#" class="btn btn-lg btn-secondary">登录后使用</a>
       </p>
@@ -58,11 +67,15 @@
 
 <style>
   #top {
+    flex: 1;
     height: 100%;
-    /* background-color: rgb(177, 156, 156); */
-    background-image: linear-gradient(125deg,#F44336,#E91E63,#9C27B0,#3F51B5,#2196F3);
+    display: -ms-flexbox;
+    background-image: linear-gradient(125deg,#f15448,#e91e62ee,#9C27B0,#3F51B5,#2196F3);
     background-size: 400%;
     animation: bganimation 20s infinite;
+    color: #fff;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
   }
   @keyframes bganimation{
     0%{
@@ -79,19 +92,12 @@
 
   }
 
-  #top {
-    display: -ms-flexbox;
-    display: flex;
-    color: #fff;
-    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-  }
-
   /* Links */
   a,
   a:focus,
   a:hover {
     color: #fff;
+    text-decoration: none;
   }
 
   /* Custom default button */
@@ -120,7 +126,7 @@
   }
 
   .nav-masthead .nav-link {
-    padding: .25rem 0;
+    padding: .25rem .25rem;
     font-weight: 700;
     color: rgba(255, 255, 255, .5);
     background-color: transparent;
@@ -172,6 +178,22 @@
   */
   .mastfoot {
     color: rgba(255, 255, 255, 0.822);
+  }
+
+  /* 
+  * css3 fade-in
+  */
+  @keyframes fade-in {  
+    0% {opacity: 0;}
+    40% {opacity: 0;}
+    100% {opacity: 1;} 
+    from {bottom: -5rem;}
+    to {bottom: 0rem;}
+  }  
+ 
+  #main {
+    position: relative; 
+    animation: fade-in 1.5s;  
   }
 
 </style>

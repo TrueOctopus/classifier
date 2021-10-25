@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 08:42:29
- * @LastEditTime: 2021-10-13 08:35:05
+ * @LastEditTime: 2021-10-25 13:21:41
  * @LastEditors: 郑钊宇
  * @Description: 
 -->
@@ -24,9 +24,12 @@
   color: #2c3e50; 
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 html,body,#app{
+  width: 100%;
   height: 100%;
 }
 
