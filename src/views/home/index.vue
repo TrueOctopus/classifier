@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-25 13:26:16
+ * @LastEditTime: 2021-10-26 21:03:53
  * @LastEditors: 郑钊宇
  * @Description: 首页
 -->
@@ -17,14 +17,14 @@
         </router-link>
         
         <nav class="nav nav-masthead justify-content-center">
-          <router-link to="/">
-            <a class="nav-link active">主页</a>
+          <router-link class="nav-link active" to="/">
+            主页
           </router-link>
-          <router-link to="/login">
-            <a class="nav-link">登录</a>
+          <router-link class="nav-link" :to="{path:'/personal/login'}">
+            登录
           </router-link>
-          <router-link to="/register">
-            <a class="nav-link">注册</a>
+          <router-link class="nav-link" :to="{path:'/personal/register'}">
+            注册
           </router-link>
         </nav>
       </div>
@@ -33,14 +33,15 @@
     <main role="main" class="inner cover" id="main">
       <h1 class="cover-heading">铁路文献自动标引分类系统</h1>
       <p class="lead">
-        <a href="#" class="btn btn-lg btn-secondary">登录后使用</a>
+        <router-link to="/login">
+          <a href="#" class="btn btn-lg btn-secondary">登录后使用</a>
+        </router-link>
       </p>
     </main>
 
     <footer class="mastfoot mt-auto">
       <div class="inner">
-        <p>Copyright © 2021.真·章鱼</p>
-        <p>Powered by Bootstrap</p>
+        <p>Copyright © 2021.真·章鱼 Powered by Bootstrap</p>
       </div>
     </footer>
   </div>

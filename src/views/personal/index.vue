@@ -1,9 +1,9 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-25 13:41:50
+ * @LastEditTime: 2021-10-26 21:51:05
  * @LastEditors: 郑钊宇
- * @Description: 登录页面
+ * @Description: 注册页面
 -->
 
 <template>
@@ -16,15 +16,15 @@
           <h3 class="masthead-brand">CLASSIFIER</h3>
         </router-link>
         <nav class="nav nav-masthead justify-content-center">
-          <router-link to="/">
-            <a class="nav-link">主页</a>
-          </router-link>
-          <router-link to="/login">
-            <a class="nav-link active">登录</a>
-          </router-link>
-          <router-link to="/register">
-            <a class="nav-link">注册</a>
-          </router-link>
+          <a class="nav-link active" @click="select('Home')">
+            主页
+          </a>
+          <a class="nav-link" @click="select('Login')">
+            登录
+          </a>
+          <a class="nav-link" @click="select('Register')">
+            注册
+          </a>
         </nav>
       </div>
     </header>
@@ -35,46 +35,7 @@
         <div class="row justify-content-md-center h-100">
           <div class="card-wrapper">
             <div class="card fat">
-              <div class="card-body">
-                <h2 class="card-title">登录</h2>
-                <form method="POST" class="my-login-validation" novalidate="">
-                  <div class="form-group">
-                    <label for="email">邮箱地址</label>
-                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                    <div class="invalid-feedback">
-                      邮箱是无效的
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="password">密码&nbsp;
-                      <a href="forgot.html" style="color: #007bff;">
-                        忘记了密码?
-                      </a>
-                    </label>
-                    <input id="password" type="password" class="form-control" name="password" required data-eye>
-                      <div class="invalid-feedback">
-                        密码不能为空
-                      </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="custom-checkbox custom-control">
-                      <input type="checkbox" name="remember" id="remember" class="custom-control-input">
-                      <label for="remember" class="custom-control-label" >记住我</label>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">
-                      登录
-                    </button>
-                  </div>
-                  <div class="mt-4 text-center">
-                    没有账户? <a href="register.html" style="color: #007bff;">新建一个账户</a>
-                  </div>
-                </form>
-              </div>
+              <router-view />
             </div>
           </div>
         </div>
@@ -84,8 +45,7 @@
 
     <footer class="mastfoot mt-auto">
       <div class="inner">
-        <p>Copyright © 2021.真·章鱼</p>
-        <p>Powered by Bootstrap</p>
+        <p>Copyright © 2021.真·章鱼 Powered by Bootstrap</p>
       </div>
     </footer>
   </div>
@@ -94,17 +54,27 @@
 </template>
 
 <script>
+  // import Register from "./components/register";
+  // import Login from "./components/login";
   export default {
-    name: 'Login',
+    name: 'Personal',
     components: {},
     props: {},
     data() {
       return {
-        
+        selected: '', // 选择项
       }
     },
     methods: {
-      
+      select(name) {
+        this.selected = name
+      }
+    },
+    watch: {
+      selected: function (nV, oV) {
+        console.log(nV, oV);
+        this.$router.push({name: this.selected})
+      }
     }
 
   }
@@ -221,7 +191,7 @@
   /*
   * Footer
   */
-  .mastfoot {
+  .mastfoot{
     color: rgba(255, 255, 255, 0.822);
   }
   /* 

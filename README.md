@@ -1,24 +1,10 @@
+<!--
+ * @Author: 郑钊宇
+ * @Date: 2021-10-12 08:43:07
+ * @LastEditTime: 2021-10-27 10:21:23
+ * @LastEditors: 郑钊宇
+ * @Description: 
+-->
 # classifier
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+铁路文献标引文类系统前端
