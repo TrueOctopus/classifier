@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-26 21:03:53
+ * @LastEditTime: 2021-10-30 14:53:21
  * @LastEditors: 郑钊宇
  * @Description: 首页
 -->
@@ -20,11 +20,14 @@
           <router-link class="nav-link active" to="/">
             主页
           </router-link>
-          <router-link class="nav-link" :to="{path:'/personal/login'}">
+          <router-link class="nav-link" v-if="!isLogin" :to="{path:'/personal/login'}">
             登录
           </router-link>
-          <router-link class="nav-link" :to="{path:'/personal/register'}">
+          <router-link class="nav-link" v-if="!isLogin" :to="{path:'/personal/register'}">
             注册
+          </router-link>
+          <router-link id="info" class="nav-link" v-if="isLogin" :to="{path:'/personal/info'}">
+            {{this.username}}
           </router-link>
         </nav>
       </div>
@@ -33,8 +36,11 @@
     <main role="main" class="inner cover" id="main">
       <h1 class="cover-heading">铁路文献自动标引分类系统</h1>
       <p class="lead">
-        <router-link to="/login">
-          <a href="#" class="btn btn-lg btn-secondary">登录后使用</a>
+        <router-link to="/personal/login" >
+          <a v-if="!isLogin" class="btn btn-lg btn-secondary">登录后使用</a>
+        </router-link>
+        <router-link to="/classifier">
+          <a v-if="isLogin" class="btn btn-lg btn-secondary">进入分类系统</a>
         </router-link>
       </p>
     </main>
@@ -56,11 +62,22 @@
     props: {},
     data() {
       return {
-        
+        isLogin: false,
+        username: ''
       }
     },
     methods: {
       
+    },
+    mounted() {
+      var userData = JSON.parse(localStorage.getItem('userData'));
+      if (userData) {
+        this.isLogin = true;
+        this.username = userData.username;
+      }
+      else {
+        this.isLogin = false;
+      }
     }
 
   }

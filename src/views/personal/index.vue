@@ -1,14 +1,13 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-26 21:51:05
+ * @LastEditTime: 2021-10-30 21:24:29
  * @LastEditors: 郑钊宇
  * @Description: 注册页面
 -->
 
 <template>
-<div id="top">
-   
+<div id="top">   
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
@@ -16,37 +15,39 @@
           <h3 class="masthead-brand">CLASSIFIER</h3>
         </router-link>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" @click="select('Home')">
+          <a id="index" class="nav-link" @click="select('Home')">
             主页
           </a>
-          <a class="nav-link" @click="select('Login')">
+          <a id="login" class="nav-link" v-if="!isLogin" @click="select('Login')">
             登录
           </a>
-          <a class="nav-link" @click="select('Register')">
+          <a id="register" class="nav-link" v-if="!isLogin" @click="select('Register')">
             注册
           </a>
+          <a id="info" class="nav-link active" v-if="isLogin" @click="select('Info')">
+            {{username}}
+          </a>
+            
         </nav>
       </div>
     </header>
 
     <main role="main" class="inner cover my-login-page" id="main">
       <section class="h-100">
-      <div class="container h-100">
-        <div class="row justify-content-md-center h-100">
-          <div class="card-wrapper">
-            <div class="card fat">
-              <router-view />
+        <div class="container h-100">
+          <div class="row justify-content-md-center h-100">
+            <div class="card-wrapper">
+              <div class="card fat">
+                <router-view />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
 
     <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Copyright © 2021.真·章鱼 Powered by Bootstrap</p>
-      </div>
+      
     </footer>
   </div>
 
@@ -54,8 +55,6 @@
 </template>
 
 <script>
-  // import Register from "./components/register";
-  // import Login from "./components/login";
   export default {
     name: 'Personal',
     components: {},
@@ -63,6 +62,8 @@
     data() {
       return {
         selected: '', // 选择项
+        isLogin: false,
+        username: ''
       }
     },
     methods: {
@@ -75,7 +76,22 @@
         console.log(nV, oV);
         this.$router.push({name: this.selected})
       }
-    }
+    },
+    created() {
+      var userData = JSON.parse(localStorage.getItem('userData'));
+      if (userData) {
+        this.isLogin = true;
+        this.username = userData.username;
+      }
+      else {
+        this.isLogin = false;
+      }
+    },
+    mounted() {
+      
+      
+    },
+    
 
   }
 </script>
@@ -208,6 +224,9 @@
   #main {
     position: relative; 
     animation: fade-in 1.5s;  
+  }
+  #main label {
+    font-weight: bold;
   }
 
 </style>
