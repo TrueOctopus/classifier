@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-30 17:35:31
+ * @LastEditTime: 2021-11-01 14:16:42
  * @LastEditors: 郑钊宇
  * @Description: 信息修改组件
 -->
@@ -90,7 +90,7 @@
     },
     methods: {
       changePersonalFun() {
-        this.$axios.post("users/changePersonal", this.personal)
+        this.$axios.post("/users/update", this.personal)
         .then(res => {
           console.log(res.data);
           if(res.data.code == 1) {

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-30 17:35:22
+ * @LastEditTime: 2021-10-31 11:19:11
  * @LastEditors: 郑钊宇
  * @Description: 信息组件
 -->
@@ -56,11 +56,18 @@
     <br>
 
     <div class="form-group m-0">
-      <router-link to="/personal/edit">
-        <button class="btn btn-primary btn-block" >
-          修改个人信息
+      <div class="row">
+        <router-link to="/personal/edit" style="width:50%;">
+          <button class="btn btn-primary" style="width:100%;">
+            修改个人信息
+          </button>
+        </router-link>
+
+        <button class="btn btn-warning" @click="logout" style="width:47.8%;">
+          注销
         </button>
-      </router-link>
+
+      </div>
     </div>
 
   </form>
@@ -109,6 +116,10 @@
           this.initData()
         })
       },
+      logout() {
+         localStorage.removeItem('userData')
+        this.$router.push('/');
+      }
     },
     created() {
       this.getUserInfo()

@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-10-30 14:42:03
+ * @LastEditTime: 2021-10-31 12:05:58
  * @LastEditors: 郑钊宇
  * @Description: 登录页面
 -->
@@ -27,12 +27,7 @@
         </div>
     </div>
 
-    <div class="form-group">
-      <div class="custom-checkbox custom-control">
-        <input type="checkbox" v-model="login.remember" id="remember" class="custom-control-input">
-        <label for="remember" class="custom-control-label" >记住我</label>
-      </div>
-    </div>
+    <br/>
 
     <div class="form-group">
       <button type="submit" class="btn btn-primary btn-block" @click="loginFun">
