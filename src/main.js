@@ -1,7 +1,7 @@
 /**
  * @Author: 郑钊宇
  * @Date: 2021-10-12 08:42:29
- * @LastEditTime: 2021-10-30 09:26:39
+ * @LastEditTime: 2021-11-16 19:30:35
  * @LastEditors: 郑钊宇
  * @Description: 
  */
@@ -22,8 +22,8 @@ import 'font-awesome/css/font-awesome.min.css'
 // axios引用
 import axios from 'axios';
 Vue.prototype.$axios=axios;
-axios.defaults.baseURL ='http://localhost:5000/api/v1';
-
+// axios.defaults.baseURL ='http://localhost:5000/api/v1';
+axios.defaults.baseURL ='/api/v1';
 // import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
 // Vue.use(ElementUI);

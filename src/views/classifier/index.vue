@@ -1,7 +1,7 @@
 <!--
  * @Author: 郑钊宇
  * @Date: 2021-10-12 09:12:39
- * @LastEditTime: 2021-11-02 10:07:03
+ * @LastEditTime: 2021-11-15 21:36:30
  * @LastEditors: 郑钊宇
  * @Description: 首页
 -->
@@ -92,7 +92,7 @@
                           <div>{{result.category}}</div>
                         </div>
                       
-                      <div class="col-md-6">
+                      <div class="col-md-6" style="height: 28rem; overflow: hidden;">
                         <label>关键短语</label>
                         <div v-for="(item, index) in result.keyPhrases" :key="index">
                           {{item}}
